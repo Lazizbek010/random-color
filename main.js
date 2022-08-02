@@ -41,14 +41,14 @@ function runColor(){
 runColor()
 
 btn.addEventListener('click', runColor)
-
-let audioPlay = true
+let music = new Audio('Hippie Sabotage - Devil Eyes.mp3')
+let istrue = true
 audio.addEventListener('click', ()=>{
-    let audio = new Audio('Hippie Sabotage - Devil Eyes.mp3')
-    if(audioPlay){
-        audio.play()
+    if(istrue){
+        istrue = false
+        music.play()
     }else{
-        audio.paused()
+        istrue = true
+        music.pause()
     }
-    audioPlay = !audioPlay
 })

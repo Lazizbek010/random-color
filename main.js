@@ -41,14 +41,20 @@ function runColor(){
 runColor()
 
 btn.addEventListener('click', runColor)
+
+let playMusic = document.querySelector('.play-music')
+let musicImg = document.querySelector('.music-img')
+
 let music = new Audio('Hippie Sabotage - Devil Eyes.mp3')
-let istrue = true
-audio.addEventListener('click', ()=>{
-    if(istrue){
-        istrue = false
+let playingEvent = true
+playMusic.addEventListener('click',()=>{
+    if(playingEvent){
         music.play()
+        playingEvent = false
+        musicImg.src = "pause-solid.svg"
     }else{
-        istrue = true
         music.pause()
+        playingEvent = true
+        musicImg.src = "play-solid.svg"
     }
 })
